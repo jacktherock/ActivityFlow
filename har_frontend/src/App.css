@@ -1,0 +1,59 @@
+* {
+    font-family: 'Lexend', sans-serif;
+}
+
+.offcanvas-size {
+    --bs-offcanvas-width: min(70vw, 500px) !important;
+}
+
+.activity_body {
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(255, 246, 236, 1) 39.5%, rgba(100, 46, 122, 0.23) 100.2%);
+}
+
+.activity_name {
+    background-image: linear-gradient(109.6deg, rgba(240, 228, 122, 1) 11.2%, rgba(253, 145, 212, 1) 54.5%, rgba(176, 222, 234, 1) 99.6%);
+}
+
+.home_title {
+    background-image: linear-gradient(110.4deg, rgba(247, 112, 15, 1) 6.4%, rgba(248, 50, 88, 1) 100.2%);
+    background-clip: text;
+    background-color: #f3ec78;
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.get_started_btn {
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(255, 136, 20, 1) 0.1%, rgba(254, 197, 31, 1) 90%);
+    /* background-color: aqua !important; */
+    border: none !important;
+    /* color:bla !important; */
+}
+
+.get_started_btn:hover {
+    background-image: linear-gradient(110.4deg, rgba(247, 112, 15, 1) 6.4%, rgba(248, 50, 88, 1) 100.2%);
+}
+
+.card_title {
+    background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(255, 136, 20, 1) 0.1%, rgba(254, 197, 31, 1) 90%);
+    color: white;
+}
+
+.navhover:hover {
+    color: #8CDA3F !important;
+}
+
+.date-trigger {
+    cursor: pointer
+}
+
+.bg-download {
+    background-color: #85FFBD;
+    background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+}
+
+.bg-accordian{
+    background-image: radial-gradient( circle 400px at 6.8% 8.3%,  rgba(255,244,169,1) 0%, rgba(255,244,234,1) 100.2% );
+}
