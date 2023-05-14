@@ -11,4 +11,3 @@ const db = firebase.firestore();
 const database = firebase.database();
 
 export { auth, db, database }
-// export { auth, db }

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Form, Button } from 'react-bootstrap'
 
-const FORM_ENDPOINT = "https://public.herotofu.com/v1/724b8480-f1c0-11ed-9eca-1f15a141e038";
+const FORM_ENDPOINT = `${process.env.REACT_APP_CONTACT_FORM_ENDPOINT}`;
 
 const ContactForm = () => {
     const [status, setStatus] = useState();
@@ -14,7 +14,7 @@ const ContactForm = () => {
 
         // Anything you need to inject dynamically
         const injectedData = {
-            ADMIN_NAME: "sonawaneabhjeet273@gmail.com",
+            ADMIN_NAME: `${process.env.REACT_APP_EMAIL}`,
         };
         const data = { name, email, message };
 

@@ -13,11 +13,11 @@ const Profile = () => {
     
     return (
         <Container>
-            <p className="text-center mt-3 mb-4 fs-2"><u>Profile</u></p>
+            <p className="text-center mt-3 mb-4 fs-2 text-decoration-underline">Profile</p>
 
             <GetProfile />
 
-            {/* <div className='text-center'>
+            {/* <div className='text-center'>   
                 <Button variant="primary" className='shadow' onClick={handleShow}>
                     Update
                 </Button>

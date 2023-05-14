@@ -9,10 +9,11 @@ const About = ({ data }) => {
                 <Row>
                     <Col md={8}>
                         <Card.Body>
-                            <Card.Title className="text-center">
+                            <Card.Title className="text-center text-decoration-underline">
                                 <img src={data.logo} alt="" width="50" />
-                                <span style={{ fontSize: "" }} className='p-2'>
-                                    <u>{data.title}</u></span>
+                                <span className='p-2'>
+                                    {data.title}
+                                </span>
                             </Card.Title>
                             <div style={{ textAlign: "justify" }}>
                                 <Card.Text className="mt-4">

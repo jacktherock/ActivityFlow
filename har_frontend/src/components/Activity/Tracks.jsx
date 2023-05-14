@@ -3,7 +3,6 @@ import { Container, Row, Col, Card, Spinner } from "react-bootstrap"
 
 const Tracks = ({ tracks, loading }) => {
 
-  console.log(tracks);
   // if(error){
   //   return (
   //     <div className="d-flex justify-content-center" >

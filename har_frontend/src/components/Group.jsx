@@ -40,7 +40,7 @@ const contact = [
 const Group = () => {
     return (
         <Container>
-            <p className="text-center mt-3 mb-4 fs-2"><u>Project mates</u></p>
+            <p className="text-center mt-3 mb-4 fs-2 text-decoration-underline">Project mates</p>
             <Row className="d-flex justify-content-center">
                 {
                     contact.map((item) => {
