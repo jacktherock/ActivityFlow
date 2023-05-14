@@ -4,11 +4,13 @@ import { Card, Col, Row } from 'react-bootstrap'
 const blog = [
     {
         id: 1,
-        desc: "Fitness is the state of being physically and mentally healthy and active. It involves engaging in regular exercise and maintaining a balanced and nutritious diet to improve one's overall health and wellbeing. Engaging in fitness activities can help reduce the risk of chronic diseases, improve cardiovascular health, increase muscle strength and endurance, boost energy levels, and improve mood and mental health."
+        title: "Fitness",
+        desc: "Fitness is crucial to a healthy and fulfilling life. It requires regular exercise and a balanced diet to enhance both physical and mental health. By mitigating the risk of chronic diseases, enhancing cardiovascular health, increasing muscle strength and endurance, boosting energy levels, and improving mood and mental health."
     },
     {
         id: 2,
-        desc: "Health refers to the overall state of physical, mental, and social wellbeing. It involves maintaining a healthy lifestyle by engaging in regular exercise, eating a balanced and nutritious diet, getting enough sleep, managing stress, and avoiding harmful substances. Good health is essential for living a happy and productive life, and it can also reduce the risk of developing chronic diseases and other health conditions."
+        title: "Nutrition",
+        desc: "Good health means taking care of your body, mind, and social wellbeing. It involves regular exercise, balanced nutrition, rest, stress management, and avoiding harmful substances. By prioritizing good health, you can enjoy a happier, more productive life while reducing the risk of chronic diseases and other health conditions."
     }
 ]
 
@@ -21,6 +23,7 @@ const Section3 = () => {
                     return (
                         <Col sm={12} md={6} lg={6} key={item.id}>
                             <Card className="p-4 text-center border-0 shadow rounded-5 mb-4">
+                                <Card.Title className='pb-2 fw-bold fs-4 pt-2 text-decoration-underline text-warning'>{item.title}</Card.Title>
                                 <Card.Text>
                                     {item.desc}
                                 </Card.Text>
