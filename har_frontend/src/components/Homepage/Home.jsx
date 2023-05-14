@@ -10,7 +10,7 @@ import Section5 from './Section5'
 const Home = ({ data, user }) => {
 
     return (
-        <Container>
+        <Container className="mb-5">
             <Section1 data={data} user={user} />
 
             <Section2 />

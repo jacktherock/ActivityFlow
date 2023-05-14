@@ -1,17 +1,17 @@
 import React from 'react'
-import { Card, Row, Col } from 'react-bootstrap'
+import { Card, Row, Col, Container } from 'react-bootstrap'
 import bgActivity from '../assets/imgs/activity.png'
 
 const About = ({ data }) => {
     return (
-        <div className='d-flex justify-content-center'>
+        <Container className='d-flex justify-content-center mb-5'>
             <Card className="m-4 p-4 rounded-5 shadow border-0" style={{ width: "1000px" }}>
                 <Row>
                     <Col md={8}>
                         <Card.Body>
-                            <Card.Title className="text-center text-decoration-underline">
+                            <Card.Title className="text-center">
                                 <img src={data.logo} alt="" width="50" />
-                                <span className='p-2'>
+                                <span className='p-2 fs-3 home_title'>
                                     {data.title}
                                 </span>
                             </Card.Title>
@@ -33,7 +33,7 @@ const About = ({ data }) => {
                     </Col>
                 </Row>
             </Card>
-        </div>
+        </Container>
     )
 }
 

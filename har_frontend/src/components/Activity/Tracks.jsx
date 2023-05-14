@@ -12,7 +12,7 @@ const Tracks = ({ tracks, loading }) => {
   // }
 
   return (
-    <Container>
+    <Container className="mb-5">
 
       {loading ? (
         <div className="d-flex justify-content-center" >

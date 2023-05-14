@@ -23,7 +23,7 @@ const Header = ({ user, data }) => {
 
                     <img src={data.logo} alt="Logo" width="40" height="40" className="me-3" />
                     <Link to="/" className="">
-                        <Button variant="dark" className='navhover rounded-pill fs-5' style={{ backgroundColor: "#172541" }}>
+                        <Button variant="dark" className='navhover rounded-4 fs-6' style={{ backgroundColor: "#172541" }}>
                             {data.title}
                         </Button>
                     </Link>
@@ -78,7 +78,7 @@ const Header = ({ user, data }) => {
                                     About
                                 </Nav.Link>
                                 <Nav.Link as={Link} to="/group" className="navhover nav-item mx-3 py-2">
-                                    Group
+                                    Project mates
                                 </Nav.Link>
                                 <Nav.Link as={Button} className="bg-transparent text-info nav-item border-0">
                                     {currentTime}

@@ -34,7 +34,7 @@ const GetProfile = () => {
     }, [uid])
 
     return (
-        <Container className='py-3'>
+        <Container className='my-5'>
             <Card className="border-0">
                 <Card.Body>
                     <Row>

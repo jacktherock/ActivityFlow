@@ -50,9 +50,9 @@ const Login = () => {
     return (
         <Container fluid>
             <div className='d-flex align-items-center justify-content-center'>
-                <h1 className='text-center shadow px-4 mt-4 rounded-pill py-2'>Login</h1>
+                <h1 className='text-center px-5 mt-4 py-1 home_title'>Login</h1>
             </div>
-            <Row className="d-flex align-items-center justify-content-center ">
+            <Row className="d-flex align-items-center justify-content-center mx-3">
                 <Col className="py-5" style={{ width: "450px" }} md={8}>
                     <h3>Welcome Runner...</h3>
                     <Form onSubmit={(e) => loginSubmit(e)} className="my-4">
@@ -62,6 +62,7 @@ const Login = () => {
                                     id="floatingInputCustom"
                                     type="email"
                                     placeholder="name@gmail.com"
+                                    className='rounded-3'
                                     onChange={(e) => setLoginEmail(e.target.value)}
                                 />
                                 <label htmlFor="floatingInputCustom">Email address</label>
@@ -73,13 +74,14 @@ const Login = () => {
                                     id="floatingPasswordCustom"
                                     type={passwordShown ? "text" : "password"}
                                     placeholder="Password"
+                                    className='rounded-3'
                                     onChange={(e) => setLoginPassword(e.target.value)}
                                 />
                                 <label htmlFor="floatingPasswordCustom">Password</label>
                                 <Button className="bg-transparent text-dark border-0" onClick={togglePassword}>{passwordShown ? <i className="bi bi-eye"></i> : <i className="bi bi-eye-slash"></i>}</Button>
                             </Form.Floating>
                         </Form.Group>
-                        <Button variant="primary" type="submit">
+                        <Button variant="primary" type="submit" className='rounded-3'>
                             Login
                         </Button>
                     </Form>

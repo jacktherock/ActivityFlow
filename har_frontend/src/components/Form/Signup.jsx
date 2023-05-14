@@ -36,7 +36,7 @@ const Signup = () => {
     return (
         <Container fluid>
             <div className='d-flex align-items-center justify-content-center'>
-                <h1 className='text-center shadow px-4 mt-4 rounded-pill py-2'>Signup</h1>
+                <h1 className='text-center border rounded-4 px-5 mt-4 py-1 home_title'>Signup</h1>
             </div>
             <Row className="d-flex align-items-center justify-content-center ">
                 <img src={signupImg} alt="" className='' style={{ width: "500px" }} />

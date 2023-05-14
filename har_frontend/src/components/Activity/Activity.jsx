@@ -70,7 +70,7 @@ const Activity = ({ user }) => {
   }, [user]);
 
   return (
-    <Container>
+    <Container className="mb-5">
       <p className="text-center mt-3 mb-4 fs-2 text-decoration-underline">Activity</p>
       <div className='d-flex justify-content-center'>
         <Form.Control className="mb-5 date-trigger border-0 text-center shadow rounded-pill" style={{ width: "220px" }} type="date" id="date" onChange={handleDateChange} placeholder='Get Tracks' />

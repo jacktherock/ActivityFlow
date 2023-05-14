@@ -39,7 +39,7 @@ const contact = [
 
 const Group = () => {
     return (
-        <Container>
+        <Container className="mb-5">
             <p className="text-center mt-3 mb-4 fs-2 text-decoration-underline">Project mates</p>
             <Row className="d-flex justify-content-center">
                 {
