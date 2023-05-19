@@ -29,6 +29,9 @@ const Login = () => {
             // eslint-disable-next-line
             const result = await auth.signInWithEmailAndPassword(loginEmail, loginPassword)
                 .then((user) => {
+                    const token = auth.currentUser.getIdToken(true).then((idToken) => {
+                        localStorage.setItem('idToken', idToken);
+                    })
                     const uid = user.user.uid;
                     localStorage.setItem('uid', uid);
                     // console.log(uid)

@@ -23,17 +23,17 @@ const contact = [
     },
     {
         id: 3,
-        name: "Nikhil Chinchore",
-        img: contact3,
-        github: "https://github.com/NI-TECH-hub",
-        linkedin: "https://www.linkedin.com/in/nikhil-chinchore-098b49201/"
-    },
-    {
-        id: 4,
         name: "Harshada Shelke",
         img: contact4,
         github: "",
         linkedin: "https://www.linkedin.com/in/harshada-s-401889179/"
+    },
+    {
+        id: 4,
+        name: "Nikhil Chinchore",
+        img: contact3,
+        github: "https://github.com/NI-TECH-hub",
+        linkedin: "https://www.linkedin.com/in/nikhil-chinchore-098b49201/"
     },
 ]
 

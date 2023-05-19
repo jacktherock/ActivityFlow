@@ -22,6 +22,8 @@ const data = {
   title: "ActivityFlow"
 }
 
+const localhost = "http://127.0.0.1:5000/"
+
 const App = () => {
 
   const [user, setUser] = useState(null)
@@ -44,8 +46,8 @@ const App = () => {
       <Header user={user} data={data} />
       <Routes>
         <Route path="/" element={<Home data={data} user={user} />} />
-        <Route path="/activity" element={<Activity user={user} />} />
-        <Route path="/profile" element={<Profile user={user} />} />
+        <Route path="/activity" element={<Activity user={user} localhost={localhost} />} />
+        <Route path="/profile" element={<Profile user={user} localhost={localhost} />} />
         <Route path="/login" element={<Login />} />
         {/* <Route path="/signup" element={<Signup />} /> */}
         <Route path="/download" element={<Download />} />

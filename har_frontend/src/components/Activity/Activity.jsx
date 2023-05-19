@@ -4,44 +4,27 @@ import Piechart from './Piechart'
 import Tracks from './Tracks'
 import { useNavigate } from 'react-router-dom'
 import { db, auth } from "../../firebase"
+import axios from 'axios'
 
-const Activity = ({ user }) => {
 
+const Activity = ({ localhost, user }) => {
+
+  const date_url = `${localhost}/activity?date=`
+
+  const [currentDate, setCurrentDate] = useState(new Date().toISOString().slice(0, 10));
   const navigate = useNavigate();
-  const [tracks, setTracks] = useState({});
+  const [tracks, setTracks] = useState(currentDate);
   const [loading, setLoading] = useState(true);
   // const [error, setError] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
 
   const uid = auth.currentUser?.uid;
-  const docRef = db.collection("userActivityData").doc(uid);
-
-  // var spendsRef = db.collection('userBioData', ref => ref.where("timestamp", ">=", "25-03-2023").where("timestamp", "<", "26-03-2023"));
-
-
-  // const check = (e) => {
-  //   console.log(e.target.value);
-  // }
-
-  // const dt = tracks.date?.seconds;
-  // if (dt) {
-  //   const t = new Date(dt * 1000).toISOString()
-  //      console.log(t);
-  // }
+  const docRef = db.collection("userActivityData").doc(uid)
 
   const handleDateChange = (event) => {
     setSelectedDate(event.nativeEvent.srcElement.valueAsDate);
   };
-  console.log(selectedDate);
 
-  // const startDate = selectedDate ? new Date(selectedDate).getTime() : null;
-  // const endDate = startDate ? startDate + 86400000 : null; // add 1 day in milliseconds
-
-  // const spendsRef = db.collection('userBioData')
-  //   .where('userId', '==', uid)
-  //   .where('timestamp', '>=', startDate)
-  //   .where('timestamp', '<', endDate);
-  //  console.log(spendsRef);
 
   useEffect(() => {
     docRef.get().then((doc) => {
@@ -68,6 +51,26 @@ const Activity = ({ user }) => {
     }
     // eslint-disable-next-line
   }, [user]);
+
+  useEffect(() => {
+    const idToken = localStorage.getItem("idToken");
+
+    if (idToken && selectedDate) {
+      const date = selectedDate.toISOString().slice(0, 10)
+
+      axios.get(date_url + date, {
+        headers: { token: `${idToken}` }
+      })
+        .then((response) => {
+          // console.log(response.data);
+          setTracks(response.data.overall_stats);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }, [selectedDate, date_url])
+
 
   return (
     <Container className="mb-5">
