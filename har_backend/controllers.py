@@ -1,6 +1,7 @@
 from datetime import datetime
 from typing import Union
 from .config import db
+from pytz import timezone 
 
 
 def get_activity_by_user(date: Union[datetime, str], user: dict):
@@ -9,8 +10,8 @@ def get_activity_by_user(date: Union[datetime, str], user: dict):
     y,m,d = datetime.now().strftime("%Y-%m-%d").split('-')
     if date:
         y,m,d = date.split('-')
-    dt = datetime(int(y),int(m),int(d),0,0,0,0)
-    end_dt = datetime(int(y),int(m),int(d),23,59,59,999)
+    dt = datetime(int(y),int(m),int(d),0,0,0,0, tzinfo=timezone("Asia/Kolkata"))
+    end_dt = datetime(int(y),int(m),int(d),23,59,59,999, tzinfo=timezone("Asia/Kolkata"))
     doc_ref = db.collection('userActivityData').where('date', ">=", dt).where('date', "<=", end_dt)
     docs = doc_ref.stream()
     overall_stats = {
