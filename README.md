@@ -1,8 +1,10 @@
 # Activity Flow - Human Activity Recognition
 
-### Project Name: `Enhancing HAR Model Accuracy through Multimodal Sensor Data Integration`
+### Project Name: 
+`Enhancing HAR Model Accuracy through Multimodal Sensor Data Integration`
 
-### Technologies: `Machine Learning`, `Android Development - Java`, `Backend - Flask`, `Frontend - React JS`, `Javascript`, `JSX`, `Bootstrap`
+### Technologies: 
+`Machine Learning`, `Android Development - Java`, `Backend - Flask`, `Frontend - React JS`, `Javascript`, `JSX`, `Bootstrap`
 
 ### Overview: 
  A human activity recognition app is a software tool that uses sensors such as accelerometers, gyroscopes, and magnetometers to monitor and track the activities of the user. The app provides precise information about the activity performed by the user throughout the day with 90% accuracy. The app can recognize a wide range of activities such as walking, running, cycling, sitting, standing, and even sleeping.
