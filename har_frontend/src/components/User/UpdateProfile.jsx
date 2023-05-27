@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import { updateProfile } from '../../network/agent.js'
 // import { Link } from 'react-router-dom'
 
 const UpdateProfile = () => {

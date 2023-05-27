@@ -7,17 +7,18 @@ const Piechart = ({ tracks, loading }) => {
     const [duration, setDuration] = useState([]);
 
     useEffect(() => {
-        const tempTrack = tracks;
-        delete tempTrack.uid;
-        delete tempTrack.date;
+        if (tracks) {
+            const tempTrack = { ...tracks };
+            delete tempTrack.uid;
+            delete tempTrack.date;
 
-        const ac = Object.keys(tempTrack);
-        const dc = Object.values(tempTrack);
+            const ac = Object.keys(tempTrack);
+            const dc = Object.values(tempTrack);
 
-        setActivity(ac);
-        setDuration(dc);
-
-    }, [tracks])
+            setActivity(ac);
+            setDuration(dc);
+        }
+    }, [tracks]);
 
 
     return (
@@ -34,7 +35,7 @@ const Piechart = ({ tracks, loading }) => {
                         </div>
                     ) : (
                         <>
-                            
+
                             <Chart
                                 type="donut"
                                 width='100%'
@@ -80,7 +81,7 @@ const Piechart = ({ tracks, loading }) => {
                                         fontFamily: 'lexend, sans-serif',
                                         fontWeight: 400,
                                         formatter: function (seriesName, opts) {
-                                            return [seriesName, " - ", opts.w.globals.series[opts.seriesIndex]]
+                                            return [seriesName, " - ", opts.w.globals.series[opts.seriesIndex], " sec"]
                                         },
                                         inverseOrder: false,
                                         width: undefined,

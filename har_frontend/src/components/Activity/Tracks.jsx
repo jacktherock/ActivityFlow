@@ -3,14 +3,6 @@ import { Container, Row, Col, Card, Spinner } from "react-bootstrap"
 
 const Tracks = ({ tracks, loading }) => {
 
-  // if(error){
-  //   return (
-  //     <div className="d-flex justify-content-center" >
-  //       <p className="shadow px-5 py-3 rounded-4 bg-danger text-white">{error}</p>
-  //     </div>
-  //   )
-  // }
-
   return (
     <Container className="mb-5">
 

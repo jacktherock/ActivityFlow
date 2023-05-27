@@ -1,38 +1,25 @@
 import { Container, Card, Row, Col, Placeholder } from "react-bootstrap";
 import { auth } from "../../firebase"
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import { getProfile } from '../../network/agent.js'
 
 
-const GetProfile = ({ localhost }) => {
-    const self_url = `${localhost}/self`
-
+const GetProfile = () => {
     const [data, setData] = useState({})
     const [eml, setEml] = useState('')
     const user = auth.currentUser;
-
-    useEffect(() => {
-        const idToken = localStorage.getItem("idToken");
-
-        if (idToken) {
-            axios.get(self_url, {
-                headers: { token: `${idToken}` }
-            })
-                .then((response) => {
-                    //   console.log(response.data);
-                    setData(response.data);
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
-        }
-    }, [self_url])
 
     useEffect(() => {
         auth.onAuthStateChanged((user) => {
             if (user) {
                 setEml(user.email);
             }
+        });
+
+        getProfile().then((response) => {
+            setData(response);
+        }).catch((error) => {
+            console.log(error);
         });
     }, [user])
 

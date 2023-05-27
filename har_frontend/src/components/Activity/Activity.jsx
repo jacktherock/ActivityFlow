@@ -4,16 +4,13 @@ import Piechart from './Piechart'
 import Tracks from './Tracks'
 import { useNavigate } from 'react-router-dom'
 import { db, auth } from "../../firebase"
-import axios from 'axios'
+import { getActivity } from '../../network/agent'
 
+const Activity = ({ user }) => {
 
-const Activity = ({ localhost, user }) => {
-
-  const date_url = `${localhost}/activity?date=`
-
-  const [currentDate, setCurrentDate] = useState(new Date().toISOString().slice(0, 10));
+  const idToken = localStorage.getItem("idToken");
   const navigate = useNavigate();
-  const [tracks, setTracks] = useState(currentDate);
+  const [tracks, setTracks] = useState({});
   const [loading, setLoading] = useState(true);
   // const [error, setError] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
@@ -25,12 +22,23 @@ const Activity = ({ localhost, user }) => {
     setSelectedDate(event.nativeEvent.srcElement.valueAsDate);
   };
 
+  useEffect(() => {
+    if (idToken && selectedDate) {
+      const date = selectedDate.toISOString().slice(0, 10)
+      getActivity(date)
+        .then((response) => {
+          setTracks(response.overall_stats);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }, [selectedDate])
 
   useEffect(() => {
     docRef.get().then((doc) => {
       if (doc.exists) {
         setTracks(doc.data());
-        // console.log(doc.data());
         setLoading(false);
       } else {
         // doc.data()// will be undefined in this case
@@ -51,25 +59,6 @@ const Activity = ({ localhost, user }) => {
     }
     // eslint-disable-next-line
   }, [user]);
-
-  useEffect(() => {
-    const idToken = localStorage.getItem("idToken");
-
-    if (idToken && selectedDate) {
-      const date = selectedDate.toISOString().slice(0, 10)
-
-      axios.get(date_url + date, {
-        headers: { token: `${idToken}` }
-      })
-        .then((response) => {
-          // console.log(response.data);
-          setTracks(response.data.overall_stats);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
-  }, [selectedDate, date_url])
 
 
   return (

@@ -1,0 +1,1 @@
+auth_check_ignore_list = ["homepage"]
