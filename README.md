@@ -13,6 +13,37 @@ The app works by collecting data from the sensors and using machine learning alg
 
 The app provides real-time feedback to the user about their activity level and can also provide alerts and reminders to encourage them to stay active throughout the day. The app can also track the user's progress over time, allowing them to set goals and monitor their progress towards achieving them.
 
+## Lookup:
+
+- Home Page
+
+![Home](./github/web_homapage.png)
+
+- Login Page
+
+![Login](./github/web_login.png)
+
+- Dashboard Page
+
+![Dashboard](./github/web_dashboard.png)
+
+- Profile Page
+
+![Profile](./github/web_profile.png)
+
+- About Page
+
+![About](./github/web_about.png)
+
+- Projectmates Page
+
+![Projectmates](./github/web_projectmates.png)
+
+- Download App Page
+
+![Download](./github/web_download.png)
+
+
 ## Installation Instructions:
 
 ### Prerequisites:
@@ -71,3 +102,5 @@ npm install
 - [Pratik Chopane](https://github.com/prateiku)
 - [Nikhil Chinchore](https://github.com/NI-TECH-hub)
 - Harshada Shelke
+
+## Thank You !
